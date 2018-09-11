@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="A To-Do list using AWS DynamoDB.">
+    <meta name="author" content="Donovan Troshynski">
 
     <title>ToDo List</title>
 
@@ -13,7 +13,6 @@
 
     <!-- Custom styles for this template -->
     <link href="<%= static_path + "/bootstrap/css/jumbotron-narrow.css" %>" rel="stylesheet">
-
   </head>
 
   <body>
@@ -40,9 +39,6 @@
         <p id="signupErrorText">Error adding item.</p>
       </div>
       <div class="jumbotron">
-        <!-- <h1>Add your To-Do item...</h1>
-        <p class="lead">You can add an item, due-date, and internet link</p>
-        <p><a class="btn btn-lg btn-success"  data-toggle="modal" href="#signupModal">Add</a></p> -->
         <form id="signupForm" role="form">
           <input type="hidden" id="theme" name="theme" value="<%= theme %>"/>
           <div class="form-group">
@@ -60,46 +56,13 @@
         </form>
         <button id="signup" type="button" class="btn btn-primary">Add</button>
       </div>
-
+      
+      <button id="getToDos" type="button" class="btn btn-primary">Get To Dos</button>
 
       <div class="footer">
         <p>&copy; Donovan Troshynski 2018</p>
       </div>
-      
-      <!-- Modal -->
-       <!-- <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
-         <div class="modal-dialog">
-           <div class="modal-content">
-             <div class="modal-header">
-               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-               <h4 class="modal-title">Add To-Do Item</h4>
-             </div>
-             <div class="modal-body">
-               <form id="signupForm" role="form">
-                 <input type="hidden" id="theme" name="theme" value="<%= theme %>"/>
-                 <div class="form-group">
-                   <label for="name">Item Name</label>
-                   <input type="text" class="form-control" id="item" name="item" placeholder="Walk dog">
-                 </div>
-                 <div class="form-group">
-                   <label for="email">Due Date</label>
-                   <input type="email" class="form-control" id="date" name="date" placeholder="3 PM">
-                 </div>
-                 <div class="form-group">
-                  <label for="name">Web Link?</label>
-                  <input type="text" class="form-control" id="link" name="link" placeholder="google.com">
-                </div>
-               </form>
-             </div>
-             <div class="modal-footer">
-               <button id="signup" type="button" class="btn btn-primary">Add</button>
-             </div>
-           </div>
-         </div>
-       </div> -->
-
-       <button id="getToDos" type="button" class="btn btn-primary">Get To Dos</button>
-    </div> <!-- /container -->
+    </div>
 
     <script src="<%= static_path + "/jquery/jquery-1.11.3.min.js" %>""></script>
     <script src="<%= static_path + "/bootstrap/js/bootstrap.min.js" %>""></script>

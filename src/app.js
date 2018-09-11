@@ -1,9 +1,7 @@
 // Include the cluster module
 var cluster = require('cluster');
 
-// Code to run if we're in the master process
 if (cluster.isMaster) {
-
     // Count the machine's CPUs
     var cpuCount = require('os').cpus().length;
 
@@ -20,8 +18,6 @@ if (cluster.isMaster) {
         cluster.fork();
 
     });
-
-// Code to run if we're in a worker process
 } else {
     var AWS = require('aws-sdk');
     var express = require('express');
@@ -92,7 +88,7 @@ if (cluster.isMaster) {
         console.log('in app.get("/getToDo")');
         ddb.scan({
             'TableName': ddbTable
-        }, function(err, data) {
+        }, function(err, toDoList) {
             if (err) {
                 var returnStatus = 500;
 
@@ -103,7 +99,7 @@ if (cluster.isMaster) {
                 res.status(returnStatus).end();
                 console.log('DDB Error: ' + err);
             } else {
-                console.log(data);          
+                console.log(toDoList);
             }
         });
     });
