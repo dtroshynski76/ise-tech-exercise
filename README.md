@@ -6,7 +6,7 @@ This is the source code for the Tech Exercise(s) for the University of Nebraska 
 
 Based on Amazon AWS's Node.js / DynamoDB tutorial: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/nodejs-dynamodb-tutorial.html
 
-Main URL: http://techexercise-env.mwdvjsp86b.us-east-1.elasticbeanstalk.com/
+Main URL: http://techex.ddns.net/
 
 Uses:
 1. Node.js on Amazon Linux
